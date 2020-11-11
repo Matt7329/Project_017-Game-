@@ -56,9 +56,18 @@ public class Window {
 	public void addScreen(State state, Screen screen){
         screens.put(state, screen);
     }
+	
 	public void setScreen(State state){
 		screen = screens.get(state);
     }
+	
+	public int getWidth() {
+		return f.getWidth();
+	}
+	
+	public int getHeight() {
+		return f.getHeight();
+	}
 	
 	public static void main(String[] args) {
 		new Window();

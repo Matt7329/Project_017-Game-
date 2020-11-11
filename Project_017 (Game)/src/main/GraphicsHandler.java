@@ -14,7 +14,7 @@ public class GraphicsHandler extends Thread{
 	
 	public enum Mode{REPAINT, LIMITED, UNLIMITED}
 	public float max_framerate = 120;
-	public Mode mode = Mode.LIMITED;
+	public Mode mode = Mode.UNLIMITED;
 	
 	public GraphicsHandler(Window main, BufferStrategy bs) {
 		this.main = main;
