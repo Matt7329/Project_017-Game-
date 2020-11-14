@@ -63,6 +63,9 @@ public class Game implements Screen{
 			dx += camera.speed;
 		}
 		camera.move(dx, dy);
+		if(in.mousepressed) {
+			player.attack(in.mousex, in.mousey);
+		}
 	}
 
 	public Crosshair getCrosshair() {

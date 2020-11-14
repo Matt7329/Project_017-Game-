@@ -28,7 +28,7 @@ public class Entity {
 		this.world = world;
 	}
 	
-	public void setLocation(int x, int y) {
+	public void setLocation(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -74,6 +74,14 @@ public class Entity {
 	
 	public float getY() {
 		return y;
+	}
+	
+	public float getCX() {
+		return x + width / 2;
+	}
+	
+	public float getCY() {
+		return y + height / 2;
 	}
 	
 	public boolean isVisible() {

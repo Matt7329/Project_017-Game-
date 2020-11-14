@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 import game.Game;
+import game.entity.Bullet;
 import game.entity.Entity;
 import game.entity.Player;
 import game.entity.Robot;
@@ -23,7 +24,7 @@ public class World {
 		player = new Player(this);
 		player.setLocation(0, 0);
 		player.setSize(30, 30);
-		entities.add(player);
+		add(player);
 		
 		for(int i = 0; i < 1000; i++) {
 			Robot e = new Robot(this);
@@ -32,7 +33,7 @@ public class World {
 			e.setLocation(x, y);
 			e.setSize(30, 30);
 			e.setTarget(player);
-			entities.add(e);
+			add(e);
 		}
 		
 		camera.attachTo(player);
@@ -79,5 +80,13 @@ public class World {
 	}
 	public float getWorldY(int y) {
 		return camera.y - y + camera.cam_offset_y;
+	}
+	
+	public void add(Entity e) {
+		entities.add(e);
+	}
+	public void destroy(Entity e) {
+		entities.remove(e);
+		e = null;
 	}
 }
